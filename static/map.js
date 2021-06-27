@@ -1,6 +1,6 @@
 //symbol for marker user
 
-var water_marker_icon = "/static/find_water/water_marker_icon.svg";
+var hospital_marker_icon = "/static/hospital_marker.svg";
 
 var user_marker_icon = '/static/user_marker_icon.svg';
 
@@ -208,7 +208,7 @@ function get_Markers(lat, lon, dist_range, map) {
         if (data.length > 0) {
             console.log(data[0]);
             data.forEach(function (item, index) {
-                marker_LatLng = new google.maps.LatLng(item['lat'], item['lon']);
+                marker_LatLng = new google.maps.LatLng(item['lat'], item['long']);
                 var name = item['name'];
                 var status = item['status'];
                 var type = item['type'];
@@ -217,8 +217,8 @@ function get_Markers(lat, lon, dist_range, map) {
                 var comments = item['comments'];
                 var ratings = item['ratings']
 
-
-                addWaterMarker(marker_LatLng, map, water_marker_icon, name, status, type, dist, comments, ratings, _id);
+                print('alert1')
+                addWaterMarker(marker_LatLng, map, hospital_marker_icon, name, status, type, dist, comments, ratings, _id);
 
             });
 
